@@ -56,14 +56,15 @@ public class RedMainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 0, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Liberation Serif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 255, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Windows CMD Commands");
 
         sfcButt.setBackground(new java.awt.Color(0, 0, 0));
-        sfcButt.setForeground(new java.awt.Color(255, 255, 255));
+        sfcButt.setForeground(new java.awt.Color(51, 255, 0));
         sfcButt.setText("System File Check");
         sfcButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         sfcButt.setFocusable(false);
@@ -74,7 +75,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         chkButt.setBackground(new java.awt.Color(0, 0, 0));
-        chkButt.setForeground(new java.awt.Color(255, 255, 255));
+        chkButt.setForeground(new java.awt.Color(51, 255, 0));
         chkButt.setText("Check Disc");
         chkButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         chkButt.setFocusable(false);
@@ -85,7 +86,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         dismButt.setBackground(new java.awt.Color(0, 0, 0));
-        dismButt.setForeground(new java.awt.Color(255, 255, 255));
+        dismButt.setForeground(new java.awt.Color(51, 255, 0));
         dismButt.setText("DISM");
         dismButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         dismButt.setFocusable(false);
@@ -96,7 +97,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         bcdButt.setBackground(new java.awt.Color(0, 0, 0));
-        bcdButt.setForeground(new java.awt.Color(255, 255, 255));
+        bcdButt.setForeground(new java.awt.Color(51, 255, 0));
         bcdButt.setText("Rebuild BCD");
         bcdButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bcdButt.setFocusable(false);
@@ -107,7 +108,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         clrButt.setBackground(new java.awt.Color(0, 0, 0));
-        clrButt.setForeground(new java.awt.Color(255, 255, 255));
+        clrButt.setForeground(new java.awt.Color(51, 255, 0));
         clrButt.setText("Clear");
         clrButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         clrButt.setFocusable(false);
@@ -118,7 +119,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         safeButt.setBackground(new java.awt.Color(0, 0, 0));
-        safeButt.setForeground(new java.awt.Color(255, 255, 255));
+        safeButt.setForeground(new java.awt.Color(51, 255, 0));
         safeButt.setText("Safe Mode");
         safeButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         safeButt.setFocusable(false);
@@ -129,7 +130,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         userButt.setBackground(new java.awt.Color(0, 0, 0));
-        userButt.setForeground(new java.awt.Color(255, 255, 255));
+        userButt.setForeground(new java.awt.Color(51, 255, 0));
         userButt.setText("Add User");
         userButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         userButt.setFocusable(false);
@@ -140,7 +141,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         restoreButt.setBackground(new java.awt.Color(0, 0, 0));
-        restoreButt.setForeground(new java.awt.Color(255, 255, 255));
+        restoreButt.setForeground(new java.awt.Color(51, 255, 0));
         restoreButt.setText("System Restore");
         restoreButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         restoreButt.setFocusable(false);
@@ -151,7 +152,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         copyButt.setBackground(new java.awt.Color(0, 0, 0));
-        copyButt.setForeground(new java.awt.Color(255, 255, 255));
+        copyButt.setForeground(new java.awt.Color(51, 255, 0));
         copyButt.setText("XCopy");
         copyButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         copyButt.setFocusable(false);
@@ -162,7 +163,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         pwButt.setBackground(new java.awt.Color(0, 0, 0));
-        pwButt.setForeground(new java.awt.Color(255, 255, 255));
+        pwButt.setForeground(new java.awt.Color(51, 255, 0));
         pwButt.setText("Remove PW expiry");
         pwButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pwButt.setFocusable(false);
@@ -173,7 +174,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         removeButt.setBackground(new java.awt.Color(0, 0, 0));
-        removeButt.setForeground(new java.awt.Color(255, 255, 255));
+        removeButt.setForeground(new java.awt.Color(51, 255, 0));
         removeButt.setText("Remove Dirrectory");
         removeButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         removeButt.setFocusable(false);
@@ -184,7 +185,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         });
 
         linksButt.setBackground(new java.awt.Color(0, 0, 0));
-        linksButt.setForeground(new java.awt.Color(255, 255, 255));
+        linksButt.setForeground(new java.awt.Color(51, 255, 0));
         linksButt.setText("Useful Links");
         linksButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         linksButt.setFocusable(false);
@@ -194,9 +195,17 @@ public class RedMainFrame extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane2.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setBorder(null);
+        jScrollPane2.setForeground(new java.awt.Color(51, 204, 0));
+        jScrollPane2.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+
         frontTxt.setEditable(false);
+        frontTxt.setBackground(new java.awt.Color(0, 0, 0));
+        frontTxt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         frontTxt.setContentType("text/html"); // NOI18N
-        frontTxt.setFont(new java.awt.Font("Inter", 0, 10)); // NOI18N
+        frontTxt.setFont(new java.awt.Font("Inter", 1, 10)); // NOI18N
+        frontTxt.setForeground(new java.awt.Color(51, 255, 0));
         frontTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         frontTxt.addHyperlinkListener(new javax.swing.event.HyperlinkListener() {
             public void hyperlinkUpdate(javax.swing.event.HyperlinkEvent evt) {
@@ -279,23 +288,23 @@ public class RedMainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sfcButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sfcButtActionPerformed
-        frontTxt.setText("*** The requested command ***<br><br>for online:<br><br> sfc /scannow"
-                + "<br><br>for offline:<br><br> sfc /scannow /offwindir=C:\\windows /offbootdir=C:\\");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br>for online:<br><br> sfc /scannow"
+                + "<br><br>for offline:<br><br> sfc /scannow /offwindir=C:\\windows /offbootdir=C:\\<p/>");
     }//GEN-LAST:event_sfcButtActionPerformed
 
     private void chkButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkButtActionPerformed
 
-        frontTxt.setText("*** The requested command ***<br><br> chkdsk C: /f /r");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br> chkdsk C: /f /r</p>");
     }//GEN-LAST:event_chkButtActionPerformed
 
     private void dismButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dismButtActionPerformed
 
-        frontTxt.setText("*** The requested command ***<br><br> dism /online /cleanup-image /restorehealth");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br> dism /online /cleanup-image /restorehealth</p>");
     }//GEN-LAST:event_dismButtActionPerformed
 
     private void bcdButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcdButtActionPerformed
 
-        String buildMsg = "*** The requested command ***<br>"
+        String buildMsg = "<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br>"
                 + "<br> - diskpart"
                 + "<br> - list vol"
                 + "<br> - sel vol <hidden efi volume>"
@@ -304,7 +313,7 @@ public class RedMainFrame extends javax.swing.JFrame {
                 + "<br> - T:"
                 + "<br> - cd efi/microsoft/boot"
                 + "<br> - ren BCD BCD.old"
-                + "<br> - bcdboot C:\\windows /l en-us /s T:all";
+                + "<br> - bcdboot C:\\windows /l en-us /s T:all</p>";
 
         frontTxt.setText(buildMsg);
     }//GEN-LAST:event_bcdButtActionPerformed
@@ -315,27 +324,27 @@ public class RedMainFrame extends javax.swing.JFrame {
 
     private void safeButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_safeButtActionPerformed
 
-        frontTxt.setText("*** The requested command is ***<br><br> bcdedit /set {default} safeboot network");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br> bcdedit /set {default} safeboot network</p>");
     }//GEN-LAST:event_safeButtActionPerformed
 
     private void userButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtActionPerformed
 
-        frontTxt.setText("*** The requested command is ***<br><br> net user {username} {password} /add");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br> net user {username} {password} /add</p>");
     }//GEN-LAST:event_userButtActionPerformed
 
     private void linksButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linksButtActionPerformed
 
-        frontTxt.setText("*** Useful Links ***<br>"
-                + "<br><a href=\"https://www.malwarebytes.com/mwb-download/thankyou\">MalwareBytes</a>"
-                + "<br><a href=\"https://www.guru3d.com/files-details/display-driver-uninstaller-download.html\">DDU</a>"
-                + "<br><a href=\"https://www.adlice.com/roguekiller/#alt_download\">RogueKiller</a>"
-                + "<br><a href=\"https://www.hdsentinel.com/download.php\">HDD Sentinel</a>"
-                + "<br><a href=\"https://www.magicaljellybean.com/keyfinder/\">Magic Jellybean Key Finder</a>");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** Useful Links ***<br>"
+                + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.malwarebytes.com/mwb-download/thankyou\">MalwareBytes</a>"
+                + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.guru3d.com/files-details/display-driver-uninstaller-download.html\">DDU</a>"
+                + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.adlice.com/roguekiller/#alt_download\">RogueKiller</a>"
+                + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.hdsentinel.com/download.php\">HDD Sentinel</a>"
+                + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.magicaljellybean.com/keyfinder/\">Magic Jellybean Key Finder</a></p>");
     }//GEN-LAST:event_linksButtActionPerformed
 
     private void restoreButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restoreButtActionPerformed
-        frontTxt.setText("*** The requested command is ***<br><br>net start vss"
-                + "<br><br>rstrui.exe /offline:C:\\windows=active");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>net start vss"
+                + "<br><br>rstrui.exe /offline:C:\\windows=active</p>");
     }//GEN-LAST:event_restoreButtActionPerformed
 
     private void frontTxtHyperlinkUpdate(javax.swing.event.HyperlinkEvent evt) {//GEN-FIRST:event_frontTxtHyperlinkUpdate
@@ -354,17 +363,17 @@ public class RedMainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_frontTxtHyperlinkUpdate
 
     private void copyButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtActionPerformed
-        frontTxt.setText("*** The requested command is ***<br><br>cmd /c \\Xcopy {source} {destination} /s /i /y /e /h /c  >Report.txt 2>ErrorReport.err");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>cmd /c \\Xcopy {source} {destination} /s /i /y /e /h /c  >Report.txt 2>ErrorReport.err</p>");
         
                
     }//GEN-LAST:event_copyButtActionPerformed
 
     private void pwButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwButtActionPerformed
-        frontTxt.setText("*** The requested command is ***<br><br>wmic useraccount where Name='username' SET PasswordExpires=FALSE");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>wmic useraccount where Name='username' SET PasswordExpires=FALSE</p>");
     }//GEN-LAST:event_pwButtActionPerformed
 
     private void removeButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtActionPerformed
-        frontTxt.setText("*** The requested command is ***<br><br>rmdir {dirrectory} /s /q");        
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>rmdir {dirrectory} /s /q</p>");        
     }//GEN-LAST:event_removeButtActionPerformed
 
     /**
