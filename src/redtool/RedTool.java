@@ -8,7 +8,7 @@ package redtool;
  *
  * @author kraft
  */
-public class RedTool2 {
+public class RedTool {
 
     /**
      * @param args the command line arguments
