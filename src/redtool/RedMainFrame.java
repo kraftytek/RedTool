@@ -49,7 +49,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         restoreButt = new javax.swing.JButton();
         copyButt = new javax.swing.JButton();
         pwButt = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        removeButt = new javax.swing.JButton();
         linksButt = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         frontTxt = new javax.swing.JTextPane();
@@ -172,11 +172,16 @@ public class RedMainFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Blank");
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.setFocusable(false);
+        removeButt.setBackground(new java.awt.Color(0, 0, 0));
+        removeButt.setForeground(new java.awt.Color(255, 255, 255));
+        removeButt.setText("Remove Dirrectory");
+        removeButt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        removeButt.setFocusable(false);
+        removeButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeButtActionPerformed(evt);
+            }
+        });
 
         linksButt.setBackground(new java.awt.Color(0, 0, 0));
         linksButt.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,7 +230,7 @@ public class RedMainFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(clrButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pwButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(removeButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(linksButt, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
@@ -248,7 +253,7 @@ public class RedMainFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dismButt)
                     .addComponent(restoreButt)
-                    .addComponent(jButton4))
+                    .addComponent(removeButt))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bcdButt)
@@ -358,6 +363,10 @@ public class RedMainFrame extends javax.swing.JFrame {
         frontTxt.setText("*** The requested command is ***<br><br>wmic useraccount where Name='username' SET PasswordExpires=FALSE");
     }//GEN-LAST:event_pwButtActionPerformed
 
+    private void removeButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtActionPerformed
+        frontTxt.setText("*** The requested command is ***<br><br>rmdir {dirrectory} /s /q");        
+    }//GEN-LAST:event_removeButtActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -400,12 +409,12 @@ public class RedMainFrame extends javax.swing.JFrame {
     private javax.swing.JButton copyButt;
     private javax.swing.JButton dismButt;
     private javax.swing.JTextPane frontTxt;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton linksButt;
     private javax.swing.JButton pwButt;
+    private javax.swing.JButton removeButt;
     private javax.swing.JButton restoreButt;
     private javax.swing.JButton safeButt;
     private javax.swing.JButton sfcButt;
