@@ -11,7 +11,7 @@ for virus remove and diagnostics.
 
 ######Future plans##########
 
--add more functions:
+add more functions:
   -setup windows system recovery
   -delete contents of temp folders
   -bitlocker commands
