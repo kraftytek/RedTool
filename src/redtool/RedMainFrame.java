@@ -6,7 +6,6 @@ package redtool;
 
 import java.awt.Desktop;
 //import java.io.BufferedReader;
-import java.io.IOException;
 //import java.io.InputStreamReader;
 //import java.net.MalformedURLException;
 import java.net.URI;
@@ -15,13 +14,15 @@ import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.event.HyperlinkEvent;
+import java.io.File;
+import java.io.IOException;
 
 /**
  *
  * @author kraft
  */
 public class RedMainFrame extends javax.swing.JFrame {
-
+    Desktop desktop = Desktop.getDesktop();
     /**
      * Creates new form RedMainFrame
      */
@@ -55,6 +56,7 @@ public class RedMainFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         frontTxt = new javax.swing.JTextPane();
         gitButt = new javax.swing.JButton();
+        inputTxt = new java.awt.TextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -230,6 +232,9 @@ public class RedMainFrame extends javax.swing.JFrame {
             }
         });
 
+        inputTxt.setBackground(new java.awt.Color(0, 0, 0));
+        inputTxt.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -237,31 +242,33 @@ public class RedMainFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(bcdButt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(dismButt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(chkButt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(sfcButt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
-                                .addGap(36, 36, 36)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(safeButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(userButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(restoreButt, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                    .addComponent(copyButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(clrButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(pwButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(removeButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(linksButt, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(214, 214, 214)
-                        .addComponent(gitButt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(gitButt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(bcdButt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(dismButt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(chkButt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(sfcButt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                                    .addGap(36, 36, 36)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(safeButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(userButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(restoreButt, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                        .addComponent(copyButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(clrButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(pwButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(removeButt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(linksButt, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)))))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -290,8 +297,10 @@ public class RedMainFrame extends javax.swing.JFrame {
                     .addComponent(copyButt)
                     .addComponent(linksButt))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inputTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(gitButt)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -310,65 +319,19 @@ public class RedMainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void sfcButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sfcButtActionPerformed
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br>for online:<br><br> sfc /scannow"
-                + "<br><br>for offline:<br><br> sfc /scannow /offwindir=C:\\windows /offbootdir=C:\\<p/>");
-    }//GEN-LAST:event_sfcButtActionPerformed
-
-    private void chkButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkButtActionPerformed
-
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br> chkdsk C: /f /r</p>");
-    }//GEN-LAST:event_chkButtActionPerformed
-
-    private void dismButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dismButtActionPerformed
-
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br> dism /online /cleanup-image /restorehealth</p>");
-    }//GEN-LAST:event_dismButtActionPerformed
-
-    private void bcdButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcdButtActionPerformed
-
-        String buildMsg = "<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br>"
-                + "<br> - diskpart"
-                + "<br> - list vol"
-                + "<br> - sel vol <hidden efi volume>"
-                + "<br> - assign letter T"
-                + "<br> - exit"
-                + "<br> - T:"
-                + "<br> - cd efi/microsoft/boot"
-                + "<br> - ren BCD BCD.old"
-                + "<br> - bcdboot C:\\windows /l en-us /s T:all</p>";
-
-        frontTxt.setText(buildMsg);
-    }//GEN-LAST:event_bcdButtActionPerformed
-
-    private void clrButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clrButtActionPerformed
-        frontTxt.setText("");
-    }//GEN-LAST:event_clrButtActionPerformed
-
-    private void safeButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_safeButtActionPerformed
-
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br> bcdedit /set {default} safeboot network</p>");
-    }//GEN-LAST:event_safeButtActionPerformed
-
-    private void userButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtActionPerformed
-
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br> net user {username} {password} /add</p>");
-    }//GEN-LAST:event_userButtActionPerformed
-
-    private void linksButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linksButtActionPerformed
-
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** Useful Links ***<br>"
-                + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.malwarebytes.com/mwb-download/thankyou\">MalwareBytes</a>"
-                + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.guru3d.com/files-details/display-driver-uninstaller-download.html\">DDU</a>"
-                + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.adlice.com/roguekiller/#alt_download\">RogueKiller</a>"
-                + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.hdsentinel.com/download.php\">HDD Sentinel</a>"
-                + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.magicaljellybean.com/keyfinder/\">Magic Jellybean Key Finder</a></p>");
-    }//GEN-LAST:event_linksButtActionPerformed
-
-    private void restoreButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restoreButtActionPerformed
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>net start vss"
-                + "<br><br>rstrui.exe /offline:C:\\windows=active</p>");
-    }//GEN-LAST:event_restoreButtActionPerformed
+    private void gitButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gitButtActionPerformed
+        URI getLink = null;
+        try {
+            getLink = new URI("https://github.com/kraftytek");
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(RedMainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            java.awt.Desktop.getDesktop().browse(getLink);
+        } catch (IOException ex) {
+            Logger.getLogger(RedMainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_gitButtActionPerformed
 
     private void frontTxtHyperlinkUpdate(javax.swing.event.HyperlinkEvent evt) {//GEN-FIRST:event_frontTxtHyperlinkUpdate
 
@@ -385,34 +348,93 @@ public class RedMainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_frontTxtHyperlinkUpdate
 
-    private void copyButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtActionPerformed
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>cmd /c \\Xcopy {source} {destination} /s /i /y /e /h /c  >Report.txt 2>ErrorReport.err</p>");
-        
-               
-    }//GEN-LAST:event_copyButtActionPerformed
+    private void linksButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linksButtActionPerformed
 
-    private void pwButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwButtActionPerformed
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>wmic useraccount where Name='username' SET PasswordExpires=FALSE</p>");
-    }//GEN-LAST:event_pwButtActionPerformed
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** Useful Links ***<br>"
+            + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.malwarebytes.com/mwb-download/thankyou\">MalwareBytes</a>"
+            + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.guru3d.com/files-details/display-driver-uninstaller-download.html\">DDU</a>"
+            + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.adlice.com/roguekiller/#alt_download\">RogueKiller</a>"
+            + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.hdsentinel.com/download.php\">HDD Sentinel</a>"
+            + "<br><a  style=color:rgb(51,255,0);font-family:verdana; href=\"https://www.magicaljellybean.com/keyfinder/\">Magic Jellybean Key Finder</a></p>");
+    }//GEN-LAST:event_linksButtActionPerformed
 
     private void removeButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtActionPerformed
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>rmdir {dirrectory} /s /q</p>");        
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>rmdir {dirrectory} /s /q</p>");
     }//GEN-LAST:event_removeButtActionPerformed
 
-    private void gitButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gitButtActionPerformed
-        URI getLink = null;
-        try {
-            getLink = new URI("https://github.com/kraftytek");
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(RedMainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            java.awt.Desktop.getDesktop().browse(getLink);
-        } catch (IOException ex) {
-            Logger.getLogger(RedMainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_gitButtActionPerformed
+    private void pwButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwButtActionPerformed
+        try{
+            desktop.open(new File("res/batch/Remove PW Expiry.bat"));
+        }catch(IOException e){};
+        //        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>wmic useraccount where Name='username' SET PasswordExpires=FALSE</p>");
+    }//GEN-LAST:event_pwButtActionPerformed
 
+    private void copyButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtActionPerformed
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>cmd /c \\Xcopy {source} {destination} /s /i /y /e /h /c  >Report.txt 2>ErrorReport.err</p>");
+
+    }//GEN-LAST:event_copyButtActionPerformed
+
+    private void restoreButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restoreButtActionPerformed
+        try{
+            desktop.open(new File("res/batch/System Restore.bat"));
+        }catch(IOException e){};
+        //        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br>net start vss"
+            //                + "<br><br>rstrui.exe /offline:C:\\windows=active</p>");
+    }//GEN-LAST:event_restoreButtActionPerformed
+
+    private void userButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userButtActionPerformed
+                frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br> net user {username} {password} /add</p>");
+    }//GEN-LAST:event_userButtActionPerformed
+
+    private void safeButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_safeButtActionPerformed
+        try{
+            desktop.open(new File("res/batch/Safe Mode.bat"));
+        }catch(IOException e){};
+        //        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command is ***<br><br> bcdedit /set {default} safeboot network</p>");
+    }//GEN-LAST:event_safeButtActionPerformed
+
+    private void clrButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clrButtActionPerformed
+        frontTxt.setText("");
+    }//GEN-LAST:event_clrButtActionPerformed
+
+    private void bcdButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcdButtActionPerformed
+        try{
+            desktop.open(new File("res/batch/Rebuild BCD.bat"));
+        }catch(IOException e){};
+        //        String buildMsg = "<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br>"
+        //                + "<br> - diskpart"
+        //                + "<br> - list vol"
+        //                + "<br> - sel vol <hidden efi volume>"
+        //                + "<br> - assign letter T"
+        //                + "<br> - exit"
+        //                + "<br> - T:"
+        //                + "<br> - cd efi/microsoft/boot"
+        //                + "<br> - ren BCD BCD.old"
+        //                + "<br> - bcdboot C:\\windows /l en-us /s T:all</p>";
+        //        frontTxt.setText(buildMsg);
+    }//GEN-LAST:event_bcdButtActionPerformed
+
+    private void dismButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dismButtActionPerformed
+        try{
+            desktop.open(new File("res/batch/DISM.bat"));
+        }catch(IOException e){};
+        //        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br> dism /online /cleanup-image /restorehealth</p>");
+    }//GEN-LAST:event_dismButtActionPerformed
+
+    private void chkButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkButtActionPerformed
+        try{
+            desktop.open(new File("res/batch/Check Disk.bat"));
+        }catch(IOException e){};
+        //        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br> chkdsk C: /f /r</p>");
+    }//GEN-LAST:event_chkButtActionPerformed
+
+    private void sfcButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sfcButtActionPerformed
+        try{
+            desktop.open(new File("res/batch/System File Check.bat"));
+        }catch(IOException e){};
+        //        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br>for online:<br><br> sfc /scannow"
+            //                + "<br><br>for offline:<br><br> sfc /scannow /offwindir=C:\\windows /offbootdir=C:\\<p/>");
+    }//GEN-LAST:event_sfcButtActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -456,6 +478,7 @@ public class RedMainFrame extends javax.swing.JFrame {
     private javax.swing.JButton dismButt;
     private javax.swing.JTextPane frontTxt;
     private javax.swing.JButton gitButt;
+    private java.awt.TextField inputTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
