@@ -311,23 +311,23 @@ public class RedMainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sfcButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sfcButtActionPerformed
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br>for online:<br><br> sfc /scannow"
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** This command runs a system file check, to attempt repairs ***<br><br>for online:<br><br> sfc /scannow"
                 + "<br><br>for offline:<br><br> sfc /scannow /offwindir=C:\\windows /offbootdir=C:\\<p/>");
     }//GEN-LAST:event_sfcButtActionPerformed
 
     private void chkButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkButtActionPerformed
 
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br> chkdsk C: /f /r</p>");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** This command runs a check disc to attempt sector repairs ***<br><br> chkdsk C: /f /r</p>");
     }//GEN-LAST:event_chkButtActionPerformed
 
     private void dismButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dismButtActionPerformed
 
-        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br><br> dism /online /cleanup-image /restorehealth</p>");
+        frontTxt.setText("<p style=color:rgb(51,255,0);font-family:verdana;>*** This command performs a Deployment Image Servicing and Management system repair ***<br><br> dism /online /cleanup-image /restorehealth</p>");
     }//GEN-LAST:event_dismButtActionPerformed
 
     private void bcdButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcdButtActionPerformed
 
-        String buildMsg = "<p style=color:rgb(51,255,0);font-family:verdana;>*** The requested command ***<br>"
+        String buildMsg = "<p style=color:rgb(51,255,0);font-family:verdana;>*** This list of commands will rebuild the BCD boot file ***<br>"
                 + "<br> - diskpart"
                 + "<br> - list vol"
                 + "<br> - sel vol <hidden efi volume>"
